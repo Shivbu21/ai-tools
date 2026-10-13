@@ -1,0 +1,15 @@
+# hinglish-stt — Hinglish speech-to-text with optimized decoding
+#
+# Tested with the shared venv (Python 3.12, CPU):
+#     ~/workspace/pixalified-voice-agent/venv/bin/python transcribe.py samples/clip1.wav
+# That venv already has faster-whisper + piper. To replicate elsewhere:
+faster-whisper>=1.0.0        # STT engine (ctranslate2 backend, int8 CPU)
+indic-transliteration>=2.3.0 # eval.py: Devanagari->Latin normalization before WER
+
+# --- Fine-tuning pipeline only (GPU machine; NOT needed for transcribe/eval) ---
+# torch                    # CUDA build, e.g. pip install torch --index-url https://download.pytorch.org/whl/cu121
+# transformers>=4.36
+# datasets
+# accelerate
+# soundfile
+# librosa

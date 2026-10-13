@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tools — 10 real, working AI/ML projects</title>
+<style>
+  :root{
+    --paper:#faf8f3; --ink:#1b1a17; --muted:#6f6a5e; --line:#e5ddcd;
+    --accent:#7c3aed; --card:#fffdf8; --green:#166534; --amber:#92400e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:var(--paper); color:var(--ink); line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:56px 24px 80px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:28px;margin-bottom:8px}
+  .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:12px}
+  h1{font-size:clamp(34px,5vw,54px);line-height:1.05;letter-spacing:-.02em;font-weight:800}
+  h1 .n{color:var(--accent)}
+  .sub{margin-top:14px;color:var(--muted);font-size:17px;max-width:660px}
+  .meta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+  .chip{font-size:12.5px;font-weight:600;border:1px solid var(--line);background:var(--card);
+    padding:6px 12px;border-radius:999px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:32px;border-top:1px solid var(--line)}
+  .card{
+    padding:26px 22px;border-bottom:1px solid var(--line);position:relative;
+  }
+  .card:nth-child(odd){border-right:1px solid var(--line)}
+  .card h2{font-size:20px;letter-spacing:-.01em;font-weight:750;margin-bottom:6px}
+  .card h2 .folder{font-size:12.5px;font-weight:600;color:var(--muted);font-family:ui-monospace,Menlo,monospace}
+  .card p{font-size:14.5px;color:var(--muted);max-width:440px;margin-bottom:10px}
+  .run{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:#1b1a17;color:#e8e2d4;
+    padding:8px 12px;border-radius:8px;display:block;overflow-x:auto;white-space:nowrap;margin-bottom:10px}
+  .status{font-size:13px;padding:8px 12px;border-radius:8px;background:#f0fdf4;border:1px solid #bbf7d0;color:var(--green)}
+  .status.warn{background:#fffbeb;border-color:#fde68a;color:var(--amber)}
+  .status b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
+  .readme{font-size:13px;margin-top:8px}
+  .readme a{color:var(--accent);text-decoration:none;font-weight:600}
+  footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+  footer code{font-family:ui-monospace,Menlo,monospace;font-size:12.5px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}.card:nth-child(odd){border-right:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Real AI/ML · CPU only · no fake outputs</div>
+    <h1>AI Tools <span class="n">— 10 projects that actually run.</span></h1>
+    <p class="sub">Every project below was executed on a 2-vCPU machine with no GPU. Transcripts were transcribed, resumes ranked, photos tagged, slots booked, prices forecasted — for real. Each README states what was measured and where the limits are.</p>
+    <div class="meta">
+      <span class="chip">CPU-only</span>
+      <span class="chip">Python 3.12</span>
+      <span class="chip">No cloud APIs</span>
+      <span class="chip">Honest evals in every README</span>
+    </div>
+  </header>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Hinglish STT <span class="folder">hinglish-stt/</span></h2>
+      <p>Hindi-English code-switched speech transcription — faster-whisper with Hinglish-optimized decoding vs default, measured.</p>
+      <code class="run">cd hinglish-stt && python transcribe.py samples/clip1.wav</code>
+      <div class="status"><b>Status · works on CPU now</b>Eval: +53% relative WER improvement from prompt decoding (0.672 → 0.315 avg on 3 clips). Fine-tune scripts validated; full training needs GPU.</div>
+      <div class="readme"><a href="https://github.com/Shoelee22/ai-tools/tree/main/hinglish-stt">README →</a></div>
+    </div>
+    <div class="card">
+      <h2>Avatar Lip-Sync <span class="folder">avatar-lipsync/</span></h2>
+      <p>True lip-sync talking head — Wav2Lip on CPU: portrait photo + audio → lip-synced mp4. Built for the Instagram avatar pipeline.</p>
+      <code class="run">cd avatar-lipsync && bash setup.sh && python lipsync.py --face assets/portrait.png --audio assets/voice.wav</code>
+      <div class="status"><b>Status · works on CPU now</b>Real 9.75s lip-synced mp4 produced and frame-verified. Slow: ~16× realtime on 2 vCPUs.</div>
+      <div class="readme"><a href="https://github.com/Shoelee22/ai-tools/tree/main/avatar-lipsync">README →</a></div>
+    </div>
+    <div class="card">
+      <h2>Receptionist v2 <span class="folder">receptionist-v2/</span></h2>
+      <p>Agentic voice receptionist — extends the in-house voice stack with real tool calling: book_slot, check_availability, take_message, send_confirmation on local JSON stores.</p>
+      <code class="run">cd receptionist-v2 && python test_turn.py</code>
+      <div class="status"><b>Status · works on CPU now</b>Scripted turn booked a real slot into slots.json, double-booking rejected, TTS audio produced. Needs llama-server running (see README).</div>
+      <div class="readme"><a href="https://github.com/Shoelee22/ai-tools/tree/main/receptionist-v2">README →</a></div>
+    </div>
+    <div class="card">
+      <h2>Mandi Forecast <span class="folder">mandi-forecast/</span></h2>
+      <p>Mandi price forecaster — 48,414 real Agmarknet price rows, seasonal-naive + trend baseline, walk-forward backtest, SVG web view.</p>
+      <code class="run">cd mandi-forecast && python forecast.py --crop onion --market Pune</code>
+      <div class="status"><b>Status · works on CPU now</b>Measured MAPE: Potato 8.0%, Onion 11.8%, Tomato 13.8%. Experimental — NOT trading advice.</div>
+      <div class="readme"><a href="https://github.com/Shoelee22/ai-tools/tree/main/mandi-forecast">README →</a></div>
+    </div>
+    <div class="card">
+      <h2>Resume Ranker <span class="folder">resume-ranker/</span></h2>
+      <p>Resume ranker for small-business hiring — upload PDFs + JD → ranked table with per-candidate explanations (matched/missing skills).</p>
+      <code class="run">cd resume-ranker && python test_ranking.py && python app.py</code>
+      <div class="status"><b>Status · works on CPU now</b>Genuinely discriminates best-fit resumes with explanations. Keyword-based, not judgment — always interview.</div>
+      <div class="readme"><a href="https://github.com/Shoelee22/ai-tools/tree/main/resume-ranker">README →</a></div>
+    </div>
+    <div class="card">
+      <h2>Catalog QA <span class="folder">catalog-qa/</span></h2>
+      <p>RAG over a kirana catalog — ChromaDB retrieval + qwen2.5-1.5b answers grounded in cited rows; refuses out-of-catalog questions.</p>
+      <code class="run">cd catalog-qa && python ask.py "Which atta is cheapest?"</code>
+      <div class="status warn"><b>Status · works on CPU now, one known failure mode</b>7/8 eval questions pass incl. no-hallucination gate. Open-ended price comparisons can flub at 1.5B — yes/no phrasing works.</div>
+      <div class="readme"><a href="https://github.com/Shoelee22/ai-tools/tree/main/catalog-qa">README →</a></div>
+    </div>
+    <div class="card">
+      <h2>Payment Verify <span class="folder">payment-verify/</span></h2>
+      <p>UPI screenshot forensics — EXIF/metadata, error-level analysis heatmap, layout heuristics → risk score with listed indicators.</p>
+      <code class="run">cd payment-verify && python app.py</code>
+      <div class="status"><b>Status · works on CPU now</b>ELA measurably separates a composited forgery (44.4, region flagged) from clean (11.1). Indicators only — NEVER proof or a sole financial basis.</div>
+      <div class="readme"><a href="https://github.com/Shoelee22/ai-tools/tree/main/payment-verify">README →</a></div>
+    </div>
+    <div class="card">
+      <h2>Pro Matcher <span class="folder">pro-matcher/</span></h2>
+      <p>Explainable pro matching for home services — deterministic scoring (service, area, rating, workload) with per-factor breakdowns.</p>
+      <code class="run">cd pro-matcher && python demo.py</code>
+      <div class="status"><b>Status · works on CPU now</b>Deterministic across processes, fully auditable. Runs on fictional seed data — a scoring framework, not a live marketplace.</div>
+      <div class="readme"><a href="https://github.com/Shoelee22/ai-tools/tree/main/pro-matcher">README →</a></div>
+    </div>
+    <div class="card">
+      <h2>Vision Tagger <span class="folder">vision-tagger/</span></h2>
+      <p>On-device product photo tagger — MobileNet ONNX on CPU → top-5 labels + confidences → JSON, mapped to shop categories.</p>
+      <code class="run">cd vision-tagger && python download_model.py && python tag.py sample_photos/coffee_mug.jpg</code>
+      <div class="status"><b>Status · works on CPU now</b>Real ONNX outputs recorded in EVAL.md. Generic ImageNet labels — not fine-tuned for Indian products.</div>
+      <div class="readme"><a href="https://github.com/Shoelee22/ai-tools/tree/main/vision-tagger">README →</a></div>
+    </div>
+    <div class="card">
+      <h2>Tiny GPT <span class="folder">tiny-gpt/</span></h2>
+      <p>A transformer built from scratch — ~800k params trained on Tiny Shakespeare on CPU, with CONCEPTS.md explaining every idea as it was built.</p>
+      <code class="run">cd tiny-gpt && python sample.py "To be or not"</code>
+      <div class="status"><b>Status · trained on CPU, complete</b>Real training run finished with loss curve + generated samples. A learning project — the write-up matters as much as the model.</div>
+      <div class="readme"><a href="https://github.com/Shoelee22/ai-tools/tree/main/tiny-gpt">README →</a></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Clone: <code>git clone https://github.com/Shoelee22/ai-tools.git</code> — each folder has <code>requirements.txt</code> and a README with a one-command run path. Heavy weights (Wav2Lip, Whisper) download on first run via setup scripts and are git-ignored.</p>
+  </footer>
+</div>
+</body>
+</html>

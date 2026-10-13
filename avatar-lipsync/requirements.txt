@@ -1,0 +1,16 @@
+# avatar-lipsync — true lip-sync talking head (Wav2Lip, CPU)
+#
+# Install everything with:  bash setup.sh
+# (creates ./venv, installs CPU torch, clones Wav2Lip, downloads weights)
+#
+# Pinned here for reference; setup.sh installs these into ./venv:
+torch                      # CPU build via https://download.pytorch.org/whl/cpu
+torchvision                # CPU build
+numpy
+scipy
+librosa
+opencv-python-headless
+tqdm
+numba
+soundfile
+huggingface_hub            # weights download only

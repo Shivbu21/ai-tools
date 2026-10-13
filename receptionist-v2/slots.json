@@ -1,0 +1,119 @@
+{
+  "timezone": "Asia/Kolkata",
+  "slots": [
+    {
+      "date": "2026-10-15",
+      "time": "10:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-15",
+      "time": "12:00",
+      "taken": true,
+      "by": {
+        "name": "Seed Customer A",
+        "phone": "9000000001"
+      }
+    },
+    {
+      "date": "2026-10-15",
+      "time": "17:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-16",
+      "time": "10:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-16",
+      "time": "12:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-16",
+      "time": "17:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-17",
+      "time": "10:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-17",
+      "time": "12:00",
+      "taken": true,
+      "by": {
+        "name": "Seed Customer B",
+        "phone": "9000000002"
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "time": "17:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-19",
+      "time": "10:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-19",
+      "time": "12:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-19",
+      "time": "17:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-20",
+      "time": "10:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-20",
+      "time": "12:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-20",
+      "time": "17:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-21",
+      "time": "10:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-21",
+      "time": "12:00",
+      "taken": false,
+      "by": null
+    },
+    {
+      "date": "2026-10-21",
+      "time": "17:00",
+      "taken": false,
+      "by": null
+    }
+  ]
+}

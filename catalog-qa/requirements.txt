@@ -1,0 +1,3 @@
+chromadb
+flask
+httpx  # imported directly by ask.py (also arrives transitively via chromadb)

@@ -1,0 +1,146 @@
+# Curated skill phrases for small-business hiring (India).
+# One phrase per line. Lines starting with '#' are comments.
+# Matching is case-insensitive, whole-phrase, with optional plural 's'.
+# Keep this list honest: only add phrases you would genuinely screen for.
+
+# --- accounting & finance ---
+tally
+tally prime
+tally erp
+gst
+gst filing
+gst returns
+gstr-1
+gstr-3b
+income tax
+tds
+bookkeeping
+book keeping
+invoicing
+billing
+accounts payable
+accounts receivable
+payroll
+provident fund
+esi
+audit
+bank reconciliation
+petty cash
+
+# --- office & computer ---
+ms excel
+excel
+advanced excel
+vlookup
+pivot table
+ms word
+powerpoint
+data entry
+typing
+computer operator
+email handling
+google sheets
+inventory management
+stock management
+purchase orders
+cash handling
+front desk
+reception
+
+# --- sales & customer ---
+sales
+retail sales
+field sales
+cold calling
+lead generation
+negotiation
+upselling
+merchandising
+customer service
+customer support
+client handling
+order taking
+
+# --- trade & repair ---
+electrician
+electrical wiring
+plumbing
+plumber
+welding
+welder
+carpentry
+carpenter
+masonry
+painting
+ac repair
+refrigerator repair
+mobile repair
+laptop repair
+computer repair
+cctv installation
+generator maintenance
+
+# --- driving & delivery ---
+two-wheeler license
+driving license
+lmv license
+hmv license
+delivery
+last mile delivery
+food delivery
+courier
+route planning
+vehicle maintenance
+logistics
+
+# --- food & kitchen ---
+cooking
+tandoor
+baking
+food safety
+fssai
+kitchen management
+menu planning
+
+# --- beauty & wellness ---
+haircutting
+hair coloring
+facial
+makeup
+mehndi
+manicure
+pedicure
+salon management
+
+# --- tailoring & garments ---
+tailoring
+stitching
+embroidery
+pattern making
+garment quality check
+
+# --- digital & tech ---
+python
+java
+javascript
+html
+css
+react
+sql
+mysql
+data analysis
+digital marketing
+seo
+social media marketing
+content writing
+photoshop
+video editing
+web development
+
+# --- languages (spoken) ---
+hindi
+english
+marathi
+tamil
+telugu
+bengali

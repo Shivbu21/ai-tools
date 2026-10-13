@@ -1,0 +1,33 @@
+{
+  "rows": [
+    {
+      "clip": "clip1.wav",
+      "detected_lang": "hi",
+      "baseline_wer": 0.6154,
+      "optimized_wer": 0.3077,
+      "reference": "mera naam Rahul hai and I work in Mumbai as a software engineer",
+      "baseline_hyp": "Miya Nam Bahul Hai and A'y Wake in Mumbai as a software and the need.",
+      "optimized_hyp": "Meer naam Rahul hai and I work in Mumbai as a software and the need."
+    },
+    {
+      "clip": "clip2.wav",
+      "detected_lang": "hi",
+      "baseline_wer": 0.8182,
+      "optimized_wer": 0.6364,
+      "reference": "kal subah meeting hai at ten o'clock, please presentation ready rakhna",
+      "baseline_hyp": "Kaan sab of meaty, high attain, akla ke please presentation, ready jakhanat.",
+      "optimized_hyp": "Kan sab of meeting hai? Atten? Akla ka please presentation, ready jakhanat?"
+    },
+    {
+      "clip": "clip3.wav",
+      "detected_lang": "hi",
+      "baseline_wer": 0.5833,
+      "optimized_wer": 0.0,
+      "reference": "yeh phone ka price kya hai and does it come with warranty",
+      "baseline_hyp": "This phone's pair skyo high and does it come with uvaranti.",
+      "optimized_hyp": "yeh phone ka price kya hai and does it come with warranty?"
+    }
+  ],
+  "avg_baseline_wer": 0.6722999222999224,
+  "avg_optimized_wer": 0.3146853146853147
+}

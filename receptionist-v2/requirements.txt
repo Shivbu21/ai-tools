@@ -1,0 +1,4 @@
+# Shared-venv deps (uses ~/workspace/pixalified-voice-agent/venv):
+# faster-whisper, piper-tts, fastapi, uvicorn, httpx, numpy
+# No extra packages needed. Run with:
+#   ~/workspace/pixalified-voice-agent/venv/bin/python server.py

@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Receptionist v2 — AI Voice Receptionist</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:560px;margin:40px auto;padding:0 16px;background:#101418;color:#eee;text-align:center}
+button#talk{width:120px;height:120px;border-radius:50%;border:0;font-size:1rem;background:#2e7d32;color:#fff;cursor:pointer}
+button#talk.rec{background:#c62828}
+#log{text-align:left;background:#1b2129;border-radius:8px;padding:12px;margin-top:16px;min-height:120px;white-space:pre-wrap;font-size:.9rem}
+.small{color:#888;font-size:.8rem}
+</style></head><body>
+<h1>🎙️ Maya — AI Receptionist v2</h1>
+<p class="small">Local tools: book slots, check availability, take messages, record confirmations. All offline.</p>
+<button id="talk">Hold to talk</button>
+<div id="log"></div>
+<script>
+const btn=document.getElementById('talk'),log=document.getElementById('log');
+let rec,chunks=[];
+function say(t){log.textContent+='\n'+t;log.scrollTop=log.scrollHeight;}
+async function send(blob){
+  say('…thinking');
+  const fd=new FormData();fd.append('audio',blob,'caller.webm');
+  const r=await fetch('/api/turn',{method:'POST',body:fd});
+  const d=await r.json();
+  say('you: '+d.transcript);
+  if(d.tool_calls&&d.tool_calls.length)say('tools: '+JSON.stringify(d.tool_calls));
+  say('maya: '+d.reply_text);
+  const au=new Audio('data:audio/wav;base64,'+d.audio_b64);au.play();
+}
+btn.onmousedown=async()=>{chunks=[];const s=await navigator.mediaDevices.getUserMedia({audio:true});
+  rec=new MediaRecorder(s);rec.ondataavailable=e=>chunks.push(e.data);
+  rec.onstop=()=>send(new Blob(chunks,{type:'audio/webm'}));rec.start();btn.classList.add('rec');btn.textContent='…';};
+btn.onmouseup=()=>{rec&&rec.stop();btn.classList.remove('rec');btn.textContent='Hold to talk';};
+</script></body></html>
