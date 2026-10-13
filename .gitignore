@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+
+# Virtual environments
+venv/
+venv.bak/
+finetune-venv/
+catalog-venv/
+ENV/
+env/
+
+# Model weights & downloads (recreated by setup scripts)
+*.pth
+*.onnx
+*.bin
+checkpoints/
+Wav2Lip/
+models/
+chroma_db/
+
+# ...except the finished tiny-gpt artifact (3.5MB, the point of the project)
+!tiny-gpt/model.pt
+
+# Logs & local runtime
+*.log
+.DS_Store
+
+# Keep these (proof of real runs)
+!results/demo.mp4
+!test_reply.wav
+!samples/
